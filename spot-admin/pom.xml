@@ -20,6 +20,12 @@
     </properties>
 
     <dependencies>
+        <!-- spot common -->
+        <dependency>
+            <groupId>github.beeclimb</groupId>
+            <artifactId>spot-common-util</artifactId>
+            <version>0.1.0</version>
+        </dependency>
         <!-- mybatis plus -->
         <dependency>
             <groupId>com.baomidou</groupId>
