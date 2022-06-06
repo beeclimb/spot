@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.7.0</version>
+    </parent>
+
+    <groupId>github.beeclimb</groupId>
+    <artifactId>spot</artifactId>
+    <packaging>pom</packaging>
+    <version>0.1.0</version>
+    <name>spot</name>
+    <description>the parent project of spot</description>
+
+    <properties>
+        <java.version>18</java.version>
+        <!-- spring boot -->
+        <spring_boot_starter_test_version>2.7.0</spring_boot_starter_test_version>
+        <!-- mybatis plus -->
+        <mybatis_plus_version>3.5.1</mybatis_plus_version>
+        <mybatis_plus_generator_version>3.5.1</mybatis_plus_generator_version>
+        <velocity_engine_core_version>2.3</velocity_engine_core_version>
+        <!-- for maven compiler plugin -->
+        <java_source_version>18</java_source_version>
+        <java_target_version>18</java_target_version>
+        <file_encoding>UTF-8</file_encoding>
+        <!-- log -->
+        <!--        <slf4j_api_version>1.7.36</slf4j_api_version>-->
+        <!-- mysql -->
+        <mysql_connector_version>8.0.29</mysql_connector_version>
+        <!--接口文档-->
+        <swagger_version>3.0.0</swagger_version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- mybatis-plus -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis_plus_version}</version>
+            </dependency>
+            <!-- mybatis code generator -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>${mybatis_plus_generator_version}</version>
+            </dependency>
+            <!-- template needed by mybatis plus generator -->
+            <dependency>
+                <groupId>org.apache.velocity</groupId>
+                <artifactId>velocity-engine-core</artifactId>
+                <version>${velocity_engine_core_version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-simple</artifactId>
+                <version>${slf4j_api_version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql_connector_version}</version>
+            </dependency>
+            <!-- swagger -->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-boot-starter</artifactId>
+                <version>${swagger_version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger_version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <version>${spring_boot_starter_test_version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
