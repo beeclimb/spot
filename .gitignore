@@ -31,3 +31,13 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### submodule ###
+
+./spot-admin/*.gitignore
+./spot-admin/*.mvn
+./spot-admin/mvnw
+./spot-admin/mvnw.cmd
+./*.mvn
+./mvnm
+./mvnw.cmd

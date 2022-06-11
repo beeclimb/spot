@@ -35,15 +35,23 @@ public class Response<T> {
     }
 
     public static <T> Response<T> success(T data) {
-        return new Response<>(ResponseCodeEnum.SUCCESS.getCode(), ResponseCodeEnum.SUCCESS.getMessage(), data);
+        return new Response<T>(ResponseCodeEnum.SUCCESS.getCode(), ResponseCodeEnum.SUCCESS.getMessage(), data);
     }
 
     public static <T> Response<T> success() {
-        return new Response<>(ResponseCodeEnum.SUCCESS.getCode(), ResponseCodeEnum.SUCCESS.getMessage(), null);
+        return new Response<T>(ResponseCodeEnum.SUCCESS.getCode(), ResponseCodeEnum.SUCCESS.getMessage(), null);
     }
 
     public static <T> Response<T> fail() {
-        return new Response<>(ResponseCodeEnum.FAILED.getCode(), ResponseCodeEnum.FAILED.getMessage(), null);
+        return new Response<T>(ResponseCodeEnum.FAILED.getCode(), ResponseCodeEnum.FAILED.getMessage(), null);
+    }
+
+    public static <T> Response<T> fail(ResponseCode responseCode) {
+        return new Response<T>(responseCode.getCode(), responseCode.getMessage(), null);
+    }
+
+    public static <T> Response<T> fail(String message) {
+        return new Response<T>(ResponseCodeEnum.FAILED.getCode(), message, null);
     }
 
 }
