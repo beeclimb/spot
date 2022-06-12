@@ -33,11 +33,14 @@ build/
 .vscode/
 
 ### submodule ###
-
-./spot-admin/*.gitignore
-./spot-admin/*.mvn
-./spot-admin/mvnw
-./spot-admin/mvnw.cmd
-./*.mvn
-./mvnm
-./mvnw.cmd
+/mvnw.cmd
+/mvnw
+/.mvn/
+/spot-common/**/.mvn/
+/spot-common/**/mvnw
+/spot-common/**/mvnw.cmd
+/spot-common/**/.gitignore
+/spot-admin/**/.mvn/
+/spot-admin/**/mvnw
+/spot-admin/**/mvnw.cmd
+/spot-admin/**/.gitignore
