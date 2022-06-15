@@ -51,10 +51,10 @@ public class TeacherController {
     }
 
     /**
-     * @param current 当前页数
-     * @param size 每页记录数
+     * @param current   当前页数
+     * @param size      每页记录数
      * @param teacherVo teacher value object 表示 teacher 应满足的条件
-     * @return total: 表中总记录数;  records: 满足teacher条件, 在current这一页, 所有的记录数
+     * @return total: 表中总记录数;  records: 满足teacher条件, 在current这一页, 所有的数据
      */
     @PostMapping("/conditionalPagination/{current}/{size}")
     public Response conditionalPaginationQueryTeachers(@PathVariable long current, @PathVariable long size,
