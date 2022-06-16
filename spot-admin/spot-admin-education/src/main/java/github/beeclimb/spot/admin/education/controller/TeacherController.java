@@ -74,6 +74,7 @@ public class TeacherController {
             teacherWrapper.le("gmt_modified", teacherVo.getEndTime());
         }
 
+        teacherWrapper.orderByDesc("gmt_modified");
         teacherService.page(teacherPage, teacherWrapper);
         Map<String, Object> dataMap = new HashMap<>(2);
         dataMap.put("total", teacherPage.getTotal());
