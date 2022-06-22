@@ -29,12 +29,12 @@
         <java_source_version>18</java_source_version>
         <java_target_version>18</java_target_version>
         <file_encoding>UTF-8</file_encoding>
-        <!-- log -->
-        <!--        <slf4j_api_version>1.7.36</slf4j_api_version>-->
         <!-- mysql -->
         <mysql_connector_version>8.0.29</mysql_connector_version>
         <!--接口文档-->
         <swagger_version>3.0.0</swagger_version>
+        <!-- aliyun oss -->
+        <aliyun_oss_version>3.10.2</aliyun_oss_version>
     </properties>
 
     <dependencyManagement>
@@ -84,6 +84,28 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-test</artifactId>
                 <version>${spring_boot_starter_test_version}</version>
+            </dependency>
+            <!-- aliyun oss related -->
+            <dependency>
+                <groupId>com.aliyun.oss</groupId>
+                <artifactId>aliyun-sdk-oss</artifactId>
+                <version>${aliyun_oss_version}</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.xml.bind</groupId>
+                <artifactId>jaxb-api</artifactId>
+                <version>2.3.1</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.activation</groupId>
+                <artifactId>activation</artifactId>
+                <version>1.1.1</version>
+            </dependency>
+            <!-- no more than 2.3.3-->
+            <dependency>
+                <groupId>org.glassfish.jaxb</groupId>
+                <artifactId>jaxb-runtime</artifactId>
+                <version>2.3.3</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

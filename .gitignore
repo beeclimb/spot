@@ -44,3 +44,7 @@ build/
 /spot-admin/**/mvnw
 /spot-admin/**/mvnw.cmd
 /spot-admin/**/.gitignore
+/spot-oss/mvnw.cmd
+/spot-oss/mvnw
+/spot-oss/.mvn
+/spot-oss/.gitignore
