@@ -5,6 +5,7 @@ import github.beeclimb.spot.oss.service.FileUploadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -23,7 +24,7 @@ public class FileUploadController {
     FileUploadService fileUploadService;
 
     @PostMapping("/uploadFile")
-    public Response<Map<String, String>> uploadAvatar(MultipartFile file) {
+    public Response<Map<String, String>> uploadAvatar(@RequestParam("file") MultipartFile file) {
         String url = fileUploadService.uploadFile(file);
         Map<String, String> map = new HashMap<>(1);
         map.put("avatarUrl", url);
