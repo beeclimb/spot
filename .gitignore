@@ -48,3 +48,6 @@ build/
 /spot-oss/mvnw
 /spot-oss/.mvn
 /spot-oss/.gitignore
+
+### oss ###
+/spot-oss/src/main/resources/application-osskey.properties
