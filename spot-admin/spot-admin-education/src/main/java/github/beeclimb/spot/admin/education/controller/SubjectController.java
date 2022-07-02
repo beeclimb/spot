@@ -4,6 +4,7 @@ package github.beeclimb.spot.admin.education.controller;
 import github.beeclimb.spot.admin.education.service.SubjectService;
 import github.beeclimb.spot.common.util.api.Response;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,7 +28,7 @@ public class SubjectController {
     @PostMapping("/addSubject")
     public Response addSubject(MultipartFile file) {
 
-        subjectService.saveSubject(file);
+        subjectService.saveSubject(file, subjectService);
         return Response.success();
 
     }

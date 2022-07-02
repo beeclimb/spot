@@ -17,5 +17,6 @@ public class AccessControlAllowOriginConfig implements WebMvcConfigurer {
                 .allowedOrigins("*")
                 .allowedHeaders("*")
                 .allowedMethods("*");
+
     }
 }
