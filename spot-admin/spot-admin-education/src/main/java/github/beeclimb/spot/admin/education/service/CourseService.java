@@ -1,0 +1,19 @@
+package github.beeclimb.spot.admin.education.service;
+
+import github.beeclimb.spot.admin.education.entity.Course;
+import com.baomidou.mybatisplus.extension.service.IService;
+import github.beeclimb.spot.admin.education.vo.CourseInfoVo;
+
+/**
+ * <p>
+ * 课程 服务类
+ * </p>
+ *
+ * @author baomidou
+ * @since 2022-07-03
+ */
+public interface CourseService extends IService<Course> {
+
+    void saveCourseInfo(CourseInfoVo courseInfoVo);
+
+}

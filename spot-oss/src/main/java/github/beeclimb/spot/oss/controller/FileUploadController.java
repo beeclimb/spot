@@ -17,7 +17,7 @@ import java.util.Map;
  * @date 2022/6/22 22:15:00
  */
 @RestController
-@RequestMapping("/education/oss")
+@RequestMapping("/cloud/oss")
 public class FileUploadController {
 
     @Autowired
@@ -30,6 +30,5 @@ public class FileUploadController {
         map.put("avatarUrl", url);
         return Response.success(map);
     }
-
 
 }

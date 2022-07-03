@@ -49,7 +49,7 @@ public class Generator {
      */
     private static StrategyConfig strategyConfig() {
         return new StrategyConfig.Builder()
-                .addInclude("edu_subject")
+                .addInclude("edu_course", "edu_course_description", "edu_chapter", "edu_video")
                 .addTablePrefix("edu_")
                 .serviceBuilder()
                 .formatServiceFileName("%sService")
