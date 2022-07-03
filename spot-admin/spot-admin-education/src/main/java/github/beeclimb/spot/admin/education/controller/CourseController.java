@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * <p>
  * 课程 前端控制器
@@ -26,9 +29,11 @@ public class CourseController {
     private CourseService courseService;
 
     @PostMapping("/addCourseInfo")
-    public Response addCourseInfo(@RequestBody CourseInfoVo courseInfoVo) {
-        courseService.saveCourseInfo(courseInfoVo);
-        return Response.success();
+    public Response<Map<String, String>> addCourseInfo(@RequestBody CourseInfoVo courseInfoVo) {
+        String courseId = courseService.saveCourseInfo(courseInfoVo);
+        Map<String, String> data = new HashMap<>(1);
+        data.put("courseId", courseId);
+        return Response.success(data);
     }
 
 }

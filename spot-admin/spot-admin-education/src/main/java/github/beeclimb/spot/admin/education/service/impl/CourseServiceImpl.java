@@ -30,7 +30,7 @@ public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course> impleme
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public void saveCourseInfo(CourseInfoVo courseInfoVo) {
+    public String saveCourseInfo(CourseInfoVo courseInfoVo) {
         Course course = new Course();
         BeanUtils.copyProperties(courseInfoVo, course);
         int success1 = baseMapper.insert(course);
@@ -47,6 +47,7 @@ public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course> impleme
             throw new ApiException(ResponseCodeEnum.FAILED);
         }
 
+        return courseId;
     }
 
 
