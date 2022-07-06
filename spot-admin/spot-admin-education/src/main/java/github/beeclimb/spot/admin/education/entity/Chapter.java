@@ -1,10 +1,13 @@
 package github.beeclimb.spot.admin.education.entity;
 
+import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
-import java.io.Serializable;
-import java.util.Date;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+
+import java.io.Serializable;
+import java.util.Date;
 
 /**
  * <p>
@@ -33,8 +36,10 @@ public class Chapter implements Serializable {
     private Integer sort;
 
     @ApiModelProperty("创建时间")
+    @TableField(fill = FieldFill.INSERT)
     private Date gmtCreate;
 
+    @TableField(fill = FieldFill.INSERT_UPDATE)
     @ApiModelProperty("更新时间")
     private Date gmtModified;
 
@@ -90,12 +95,12 @@ public class Chapter implements Serializable {
     @Override
     public String toString() {
         return "Chapter{" +
-        "id=" + id +
-        ", courseId=" + courseId +
-        ", title=" + title +
-        ", sort=" + sort +
-        ", gmtCreate=" + gmtCreate +
-        ", gmtModified=" + gmtModified +
-        "}";
+                "id=" + id +
+                ", courseId=" + courseId +
+                ", title=" + title +
+                ", sort=" + sort +
+                ", gmtCreate=" + gmtCreate +
+                ", gmtModified=" + gmtModified +
+                "}";
     }
 }

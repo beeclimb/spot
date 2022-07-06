@@ -9,6 +9,8 @@ import github.beeclimb.spot.admin.education.service.ChapterService;
 import github.beeclimb.spot.admin.education.service.VideoService;
 import github.beeclimb.spot.admin.education.vo.ChapterVo;
 import github.beeclimb.spot.admin.education.vo.VideoVo;
+import github.beeclimb.spot.common.util.api.ResponseCodeEnum;
+import github.beeclimb.spot.common.util.exception.ApiException;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -63,4 +65,19 @@ public class ChapterServiceImpl extends ServiceImpl<ChapterMapper, Chapter> impl
         }
         return chapterVoList;
     }
+
+    @Override
+    public boolean deleteChapterById(String chapterId) {
+        int result;
+        QueryWrapper<Video> wrapper = new QueryWrapper<>();
+        wrapper.eq("chapter_id", chapterId);
+        long count = videoService.count(wrapper);
+        if (count > 0) {
+            throw new ApiException(ResponseCodeEnum.FAILED);
+        } else {
+            result = baseMapper.deleteById(chapterId);
+        }
+        return result > 0;
+    }
+
 }
