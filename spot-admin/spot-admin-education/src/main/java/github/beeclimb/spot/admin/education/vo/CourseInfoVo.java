@@ -16,6 +16,8 @@ public class CourseInfoVo {
 
     private String teacherId;
 
+    private String subjectParentId;
+
     private String subjectId;
 
     private String title;

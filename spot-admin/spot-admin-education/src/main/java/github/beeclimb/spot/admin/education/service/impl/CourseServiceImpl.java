@@ -50,5 +50,29 @@ public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course> impleme
         return courseId;
     }
 
+    @Override
+    public CourseInfoVo getCourseInfoById(String courseId) {
+        Course course = baseMapper.selectById(courseId);
+        CourseInfoVo courseInfoVo = new CourseInfoVo();
+        BeanUtils.copyProperties(course, courseInfoVo);
+
+        CourseDescription courseDescription = courseDescriptionService.getById(courseId);
+        courseInfoVo.setDescription(courseDescription.getDescription());
+
+        return courseInfoVo;
+    }
+
+    @Override
+    public void updateCourseInfo(CourseInfoVo courseInfoVo) {
+        Course course = new Course();
+        BeanUtils.copyProperties(courseInfoVo, course);
+        baseMapper.updateById(course);
+
+        CourseDescription courseDescription = new CourseDescription();
+        courseDescription.setId(courseInfoVo.getId());
+        courseDescription.setDescription(courseInfoVo.getDescription());
+        courseDescriptionService.updateById(courseDescription);
+
+    }
 
 }

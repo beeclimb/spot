@@ -1,7 +1,10 @@
 package github.beeclimb.spot.admin.education.service;
 
-import github.beeclimb.spot.admin.education.entity.Chapter;
 import com.baomidou.mybatisplus.extension.service.IService;
+import github.beeclimb.spot.admin.education.entity.Chapter;
+import github.beeclimb.spot.admin.education.vo.ChapterVo;
+
+import java.util.List;
 
 /**
  * <p>
@@ -12,5 +15,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2022-07-03
  */
 public interface ChapterService extends IService<Chapter> {
+
+    List<ChapterVo> getChapterVideoByCourseId(String courseId);
 
 }

@@ -5,10 +5,7 @@ import github.beeclimb.spot.admin.education.service.CourseService;
 import github.beeclimb.spot.admin.education.vo.CourseInfoVo;
 import github.beeclimb.spot.common.util.api.Response;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -34,6 +31,20 @@ public class CourseController {
         Map<String, String> data = new HashMap<>(1);
         data.put("courseId", courseId);
         return Response.success(data);
+    }
+
+    @GetMapping("/getCourseInfo/{courseId}")
+    public Response<Map<String, CourseInfoVo>> getCourseInfo(@PathVariable String courseId) {
+        CourseInfoVo courseInfoVo = courseService.getCourseInfoById(courseId);
+        Map<String, CourseInfoVo> data = new HashMap<>(1);
+        data.put("course", courseInfoVo);
+        return Response.success(data);
+    }
+
+    @PostMapping("/updateCourseInfo")
+    public Response updateCourseInfo(@RequestBody CourseInfoVo courseInfoVo) {
+        courseService.updateCourseInfo(courseInfoVo);
+        return Response.success();
     }
 
 }
