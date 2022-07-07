@@ -1,10 +1,13 @@
 package github.beeclimb.spot.admin.education.entity;
 
+import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
-import java.io.Serializable;
-import java.util.Date;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+
+import java.io.Serializable;
+import java.util.Date;
 
 /**
  * <p>
@@ -59,9 +62,11 @@ public class Video implements Serializable {
     @ApiModelProperty("乐观锁")
     private Long version;
 
+    @TableField(fill = FieldFill.INSERT)
     @ApiModelProperty("创建时间")
     private Date gmtCreate;
 
+    @TableField(fill = FieldFill.INSERT_UPDATE)
     @ApiModelProperty("更新时间")
     private Date gmtModified;
 
@@ -189,21 +194,21 @@ public class Video implements Serializable {
     @Override
     public String toString() {
         return "Video{" +
-        "id=" + id +
-        ", courseId=" + courseId +
-        ", chapterId=" + chapterId +
-        ", title=" + title +
-        ", videoSourceId=" + videoSourceId +
-        ", videoOriginalName=" + videoOriginalName +
-        ", sort=" + sort +
-        ", playCount=" + playCount +
-        ", isFree=" + isFree +
-        ", duration=" + duration +
-        ", status=" + status +
-        ", size=" + size +
-        ", version=" + version +
-        ", gmtCreate=" + gmtCreate +
-        ", gmtModified=" + gmtModified +
-        "}";
+                "id=" + id +
+                ", courseId=" + courseId +
+                ", chapterId=" + chapterId +
+                ", title=" + title +
+                ", videoSourceId=" + videoSourceId +
+                ", videoOriginalName=" + videoOriginalName +
+                ", sort=" + sort +
+                ", playCount=" + playCount +
+                ", isFree=" + isFree +
+                ", duration=" + duration +
+                ", status=" + status +
+                ", size=" + size +
+                ", version=" + version +
+                ", gmtCreate=" + gmtCreate +
+                ", gmtModified=" + gmtModified +
+                "}";
     }
 }

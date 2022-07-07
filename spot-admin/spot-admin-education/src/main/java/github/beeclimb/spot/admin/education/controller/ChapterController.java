@@ -5,6 +5,7 @@ import github.beeclimb.spot.admin.education.entity.Chapter;
 import github.beeclimb.spot.admin.education.service.ChapterService;
 import github.beeclimb.spot.admin.education.vo.ChapterVo;
 import github.beeclimb.spot.common.util.api.Response;
+import github.beeclimb.spot.common.util.api.ResponseCodeEnum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -57,7 +58,7 @@ public class ChapterController {
 
     @DeleteMapping("/deleteChapter/{chapterId}")
     public Response deleteChapter(@PathVariable String chapterId) {
-        return chapterService.deleteChapterById(chapterId) ? Response.success() : Response.fail();
+        return chapterService.deleteChapterById(chapterId) ? Response.success() : Response.fail(ResponseCodeEnum.FAILED_INVALID_OPERATION);
     }
 
 

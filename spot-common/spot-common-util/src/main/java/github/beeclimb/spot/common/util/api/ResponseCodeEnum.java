@@ -7,7 +7,8 @@ package github.beeclimb.spot.common.util.api;
 
 public enum ResponseCodeEnum implements ResponseCode {
     SUCCESS(200, "successful"),
-    FAILED(500, "failed");
+    FAILED(500, "failed"),
+    FAILED_INVALID_OPERATION(501, "invalid operation code 501: Videos exist in the chapter and cannot be deleted");
 
     private final int code;
     private final String message;
