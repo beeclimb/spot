@@ -1,7 +1,8 @@
 package github.beeclimb.spot.admin.education.mapper;
 
-import github.beeclimb.spot.admin.education.entity.Course;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import github.beeclimb.spot.admin.education.entity.Course;
+import github.beeclimb.spot.admin.education.vo.CoursePublishVo;
 
 /**
  * <p>
@@ -12,5 +13,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @since 2022-07-03
  */
 public interface CourseMapper extends BaseMapper<Course> {
+
+    CoursePublishVo selectCoursePublishInfo(String courseId);
 
 }

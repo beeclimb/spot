@@ -7,6 +7,7 @@ import github.beeclimb.spot.admin.education.mapper.CourseMapper;
 import github.beeclimb.spot.admin.education.service.CourseDescriptionService;
 import github.beeclimb.spot.admin.education.service.CourseService;
 import github.beeclimb.spot.admin.education.vo.CourseInfoVo;
+import github.beeclimb.spot.admin.education.vo.CoursePublishVo;
 import github.beeclimb.spot.common.util.api.ResponseCodeEnum;
 import github.beeclimb.spot.common.util.exception.ApiException;
 import org.springframework.beans.BeanUtils;
@@ -72,6 +73,20 @@ public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course> impleme
         courseDescription.setId(courseInfoVo.getId());
         courseDescription.setDescription(courseInfoVo.getDescription());
         courseDescriptionService.updateById(courseDescription);
+
+    }
+
+    @Override
+    public CoursePublishVo getCoursePublishInfo(String courseId) {
+        return baseMapper.selectCoursePublishInfo(courseId);
+    }
+
+    @Override
+    public void putPublishCourse(String courseId) {
+        Course course = new Course();
+        course.setId(courseId);
+        course.setStatus("Normal");
+        baseMapper.updateById(course);
 
     }
 

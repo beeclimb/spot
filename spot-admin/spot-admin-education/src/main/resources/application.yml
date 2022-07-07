@@ -20,12 +20,12 @@ spring:
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-
   global-config:
     db-config:
       logic-delete-field: flag  # ????????????(since 3.3.0,????????????2)
       logic-delete-value: 1 # ??????(??? 1)
       logic-not-delete-value: 0 # ??????(??? 0)
+  mapper-locations: classpath:github/beeclimb/spot/admin/education/mapper/xml/*.xml
 
 logging:
   level:
@@ -35,5 +35,4 @@ logging:
     github.beeclimb: info
 
 debug: false
-
 
